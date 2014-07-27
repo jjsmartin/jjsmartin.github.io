@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flu in the USA</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Flu in the USA">
+  <meta name="author" content="Jonathan Martin">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/slides" 
+    src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Flu in the USA</h1>
+    <h2>Coursera Developing Data Products Course Project</h2>
+    <p>Jonathan Martin<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Flu Surveillance</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>US Centers for Disease Control</strong></p>
+
+<ul>
+<li>Collect data about flu cases from various sources</li>
+<li>Early warning of outbreaks</li>
+<li>Lots of different data collected, but this project looks at: the U.S. Outpatient Influenza-like Illness Surveillance Network (ILINet)</li>
+</ul>
+
+<p><strong>ILINet</strong></p>
+
+<ul>
+<li>Weekly reports from 1,800 outpatient healthcare providers around the country </li>
+<li>Number of patients with influenza-like illness (ILI) by age group</li>
+<li>ILI is defined as fever (temperature of 100°F [37.8°C] or greater) and a cough and/or a sore throat without a KNOWN cause other than influenza</li>
+<li>More info: <a href="http://www.cdc.gov/flu/weekly/overview.htm">http://www.cdc.gov/flu/weekly/overview.htm</a> </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Project</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Presents ILINet data in graph form</strong></p>
+
+<ul>
+<li>Original data: <a href="http://gis.cdc.gov/grasp/fluview/fluportaldashboard.html">http://gis.cdc.gov/grasp/fluview/fluportaldashboard.html</a></li>
+<li>5 time series (5 age groups and a total)</li>
+<li>Project limited to 2009-2014 (to avoid some periods of incomplete data)</li>
+<li>Project code graphs this data, with options to select among the time series and smooth the data by taking a moving average over a specified number of weeks</li>
+</ul>
+
+<p><strong>Look for patterns</strong></p>
+
+<ul>
+<li>Seasonal cycle?</li>
+<li>Relative size of outbreaks?</li>
+<li>Different patterns in different age groups?</li>
+<li>etc.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Project results</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>You might have to hit refresh to get the graph to show up here. Scroll down for controls.</strong></p>
+
+<p>link: <a href="http://jjsmartin.shinyapps.io/course_project">http://jjsmartin.shinyapps.io/course_project</a></p>
+
+<div align="center">
+<iframe 
+  src="http://jjsmartin.shinyapps.io/course_project" width="10" height="10" >
+</iframe></div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Some R code</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>And here&#39;s the results of some pointless R code:</p>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAe1BMVEX9/v0AAAAAADkAAGUAOTkAOWUAOY8AZrUA/wA5AAA5ADk5AGU5OWU5OY85j9plAABlADllAGVlOQBlOY9lZmVltf2POQCPOTmPZgCPtY+P29qP2/21ZgC1/rW1/v3ajzna24/a/tra/v39tWX924/9/rX9/tr9/v3/AAD+05dvAAAAKXRSTlP///////////////////////////////////////////////////8A/+zSMngAAAAJcEhZcwAACxIAAAsSAdLdfvwAABEOSURBVHic7Z0LV+S4EUa3h2SAnQwsm8AkgdDJ0A/+/y9M2+3u6Yds61GSqvR99wyHPQuUZV+pSpJt+G1LIPmtdgNIHSgeFIoHheJBoXhQKB4UigeF4kGheFAoHhSKB4XiQaF4UCgeFIoHheJBoXhQKB4UigeF4kGheFAoHhSKB4XiQaF4UCgeFIoHheJBoXhQKB4UigeF4kGheFAoHhSKB4XiQaF4UCgeFIoHheJBoXhQKB4UigeF4kGheFAoHhSKB4XiQaF4UCgeFIoHheJBoXhQKB4UigeF4kGheFAoHpQU8QuimYziE36W5IbiQaF4UCgeFIoHJVn86r6fI968h4YmVUkVv3l57j9/fP0ZGJpUJVX8+un97LN/aFIVjnhQkmv8+pE13iLIs/rPz8/aTahHBvGeu8HV+Rw+MAEe8RQ/AcXXJ09FSl7OPQ55/Xp2p128kRqfqX8mj/jNy0NcaOKHVvHb9R+vUaGJH2rFx4YmnsRXpLu7u9GvaRBvo9a6mLqy9bkbPpwoEG9ldn3N5JWtD8XnguJjQh+h+FywxudCd42fHFEaxJM8UDwoFI/KVA2l+D125xmRUHxPwsrCaJeh+J548VYXoxDi5wflmL74n9QOgngfN27DHj9J8aGhy5E3j7PGB4aeRWxbLFT8rwMLDWeNG3x6xQtuhIcNytMDiwxnlVv6EOIrH5jig6D4rOgVX68yih+YNZ6ooXnxGkebBloXr7K+OijeP22K919lGRFfvpkmxQfsq1D8CK2LN1LjKd4LqzdGJmCN98LojRFN2BRPkqF4UCgeFIoHpYp4zs3qU0N8g6sxe1B8a3im0+Li7+7uoMXn3qnxvbilxfd7k8A1PvverGrxCUGt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" alt="plot of chunk unnamed-chunk-1"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Flu Surveillance'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Project'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Project results'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Some R code'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
